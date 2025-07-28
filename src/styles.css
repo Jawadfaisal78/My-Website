@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; background: #f7fafd; margin: 0; }
+header { background: #003366; color: #fff; padding: 2rem; text-align: center; }
+#medicineList { display: flex; flex-wrap: wrap; gap: 1rem; padding: 2rem; }
+.medicine-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #aaa2; padding: 1rem; flex: 1 1 240px; max-width: 320px; }
+.medicine-card a { color: #003366; text-decoration: none; }
