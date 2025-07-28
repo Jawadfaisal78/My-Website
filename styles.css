@@ -1,0 +1,211 @@
+:root {
+    --primary: #003366;
+    --secondary: #00bfae;
+    --bg-light: #f7fafd;
+    --bg-dark: #1d2939;
+    --text: #222;
+    --border-radius: 18px;
+    --shadow: 0 8px 32px rgba(0, 50, 100, 0.08);
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-light);
+    color: var(--text);
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary) 60%, var(--secondary));
+    color: #fff;
+    padding: 3rem 0 2rem 0;
+    box-shadow: var(--shadow);
+    border-radius: 0 0 40px 40px;
+}
+
+header .container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+}
+
+#searchInput {
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius);
+    border: none;
+    min-width: 200px;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    transition: box-shadow var(--transition);
+}
+
+#searchInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--secondary);
+}
+
+#searchBtn {
+    padding: 0.8rem 1.5rem;
+    background: var(--secondary);
+    border: none;
+    border-radius: var(--border-radius);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition), box-shadow var(--transition);
+    box-shadow: var(--shadow);
+}
+
+#searchBtn:hover {
+    background: #009e92;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    color: var(--primary);
+    margin-top: 2rem;
+}
+
+.medicine-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.medicine-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    transition: transform 0.15s, box-shadow var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.medicine-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 50, 100, 0.14);
+}
+
+.medicine-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.medicine-card .tags {
+    margin-bottom: 1rem;
+}
+
+.medicine-card .tag {
+    display: inline-block;
+    background: var(--secondary);
+    color: #fff;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+    padding: 0.2rem 0.7rem;
+}
+
+.medicine-card p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #444;
+}
+
+footer {
+    background: var(--bg-dark);
+    color: #fff;
+    padding: 1.2rem 0;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    margin-top: 3rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(12, 30, 50, 0.55);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: var(--border-radius);
+    min-width: 340px;
+    max-width: 500px;
+    box-shadow: var(--shadow);
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: bold;
+    transition: color var(--transition);
+}
+
+.closeBtn:hover {
+    color: var(--secondary);
+}
+
+@keyframes fadeIn {
+    0% { transform: scale(0.93); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .medicine-list {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    .modal-content {
+        min-width: 90vw;
+        max-width: 95vw;
+        padding: 2rem 1rem;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Medicine Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+    <!-- Google Fonts for Modern Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌍 Global Medicine Explorer</h1>
+            <p>Discover medicines from around the world with detailed, up-to-date information. Search, browse, and learn!</p>
+            <input type="text" id="searchInput" placeholder="Search for a medicine..." autocomplete="off">
+            <button id="searchBtn">Search</button>
+        </div>
+    </header>
+    <main>
+        <section id="featured">
+            <h2>Featured Medicines</h2>
+            <div id="featuredList" class="medicine-list"></div>
+        </section>
+        <section>
+            <h2>All Medicines</h2>
+            <div id="medicineList" class="medicine-list"></div>
+        </section>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>Created by Jawadfaisal78 | Inspired by Lovable AI | Data for demonstration only</p>
+        </div>
+    </footer>
+</body>
+</html>
